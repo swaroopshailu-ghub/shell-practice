@@ -7,5 +7,5 @@ TIMESTAMP=$(date)
 
 echo $TIMESTAMP
 
-# SUM=$($NUMBER1+$NUMBER2)
-# echo "total value: $SUM"
+SUM=$($NUMBER1+$NUMBER2)
+echo "total value: $SUM"
