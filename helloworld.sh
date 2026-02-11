@@ -1,1 +1,1 @@
-Hello, am swaroop. welcome.
+echo "hello world"
