@@ -10,12 +10,21 @@ else
     echo "You're wuth root access"
 fi
 
-dnf install mysql -y
-
-if [ $? -eq 0 ]
+dnf list installed mqsql
+if [ $? -ne 0 ]
 then
+    echo "MYSQL : going to install"
+    dnf install mysql -y
+
+    if [ $? -eq 0 ]
+    then
     echo "MQSQL installed Successfully"
-else
+    else
     echo "FAILURE: MYSQL failed."
     exit 1
+    fi
+else
+    echo "MYSQL is already installed"
 fi
+
+
