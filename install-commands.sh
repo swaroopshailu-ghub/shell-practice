@@ -10,12 +10,12 @@ else
     echo "You're wuth root access"
 fi
 
-dnf install mysgfdgdgql -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]
 then
     echo "MQSQL installed Successfully"
 else
     echo "FAILURE: MYSQL failed."
-    exit $?
+    exit 1
 fi
