@@ -15,7 +15,6 @@ if [ $? -ne 0 ]
 then
     echo "MYSQL : going to install"
     dnf install mysql -y
-
     if [ $? -eq 0 ]
     then
     echo "MQSQL installed Successfully"
@@ -25,6 +24,7 @@ then
     fi
 else
     echo "MYSQL is already installed"
+    exit 1
 fi
 
 
