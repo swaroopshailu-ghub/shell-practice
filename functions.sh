@@ -30,9 +30,7 @@ if [ $? -ne 0 ]
 then
     echo "python3 : going to install"
     dnf install python3 -y
-    
     VALIDATE $? "python3"
-
 else
     echo "python3 is already installed"
     # exit 1
@@ -44,9 +42,7 @@ if [ $? -ne 0 ]
 then
     echo "nginx : going to install"
     dnf install nginx -y
-    
     VALIDATE $? "nginx"
-
 else
     echo "nginx is already installed"
     # exit 1
@@ -59,7 +55,7 @@ VALIDATE()
     then
         echo "$2 installed Successfully"
     else
-        echo "FAILURE: MYSQL failed."
+        echo "FAILURE: $2 failed."
         exit 1
     fi
 }
