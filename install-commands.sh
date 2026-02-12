@@ -17,5 +17,5 @@ then
     echo "MQSQL installed Successfully"
 else
     echo "FAILURE: MYSQL failed."
-    exit 1
+    exit $?
 fi
