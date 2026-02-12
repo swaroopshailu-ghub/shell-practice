@@ -10,7 +10,7 @@ else
     echo "You are with root access"
 fi
 
-dnf list installed mqsql
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
