@@ -21,7 +21,7 @@ then
 
 else
     echo "MYSQL is already installed"
-    exit 1
+    # exit 1
 fi
 
 dnf list installed python3
@@ -35,7 +35,7 @@ then
 
 else
     echo "python3 is already installed"
-    exit 1
+    # exit 1
 fi
 
 dnf list installed nginx
@@ -49,7 +49,7 @@ then
 
 else
     echo "nginx is already installed"
-    exit 1
+    # exit 1
 fi
 
 
