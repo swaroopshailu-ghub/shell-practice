@@ -6,14 +6,12 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-
-
 if [ $USERID -ne 0 ]
     then
-    echo "ERROR: Please run with root access"
+    echo -e "$R ERROR: Please run with root access $N"
     exit 1
     else
-    echo "You are with root access"
+    echo -e "$G You are with root access $N"
 fi
 
 dnf list installed mysql
@@ -23,7 +21,7 @@ echo "MySQL is going to install"
 dnf install mysql -y
 VALIDATE $? "MySql"
 else
-echo "MYSQL is already installed"
+echo -e "$Y MYSQL is already installed $N"
 fi
 
 dnf list installed nginx
@@ -33,7 +31,7 @@ echo "nginx is going to install"
 dnf install nginx -y
 VALIDATE $? "nginx"
 else
-echo "nginx is already installed"
+echo -e "$Y nginx is already installed $N"
 fi
 
 dnf list installed python3
@@ -43,16 +41,16 @@ echo "python3 is going to install"
 dnf install python3 -y
 VALIDATE $? "python3"
 else
-echo "python3 is already installed"
+echo -e "$Y python3 is already installed $N"
 fi
 
 VALIDATE()
 {
     if [ $1 -eq 0 ]
     then
-    echo "$2 is successfully installed"
+    echo -e "$2 is $G successfully installed $N"
     else
-    echo "FAILURE: $2 is failed"
+    echo -e "$R FAILURE: $2 is failed $N"
     exit 1
     fi
 }
