@@ -27,4 +27,5 @@ VALIDATE()
     else
     echo "FAILURE: $2 is failed"
     exit 1
+    fi
 }
