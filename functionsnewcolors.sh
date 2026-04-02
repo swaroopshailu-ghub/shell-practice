@@ -14,6 +14,17 @@ if [ $USERID -ne 0 ]
     echo -e "$G You are with root access $N"
 fi
 
+VALIDATE()
+{
+    if [ $1 -eq 0 ]
+    then
+    echo -e "$2 is $G successfully installed $N"
+    else
+    echo -e "$R FAILURE: $2 is failed $N"
+    exit 1
+    fi
+}
+
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
@@ -43,14 +54,3 @@ VALIDATE $? "python3"
 else
 echo -e "$Y python3 is already installed $N"
 fi
-
-VALIDATE()
-{
-    if [ $1 -eq 0 ]
-    then
-    echo -e "$2 is $G successfully installed $N"
-    else
-    echo -e "$R FAILURE: $2 is failed $N"
-    exit 1
-    fi
-}
