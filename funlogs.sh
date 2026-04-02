@@ -35,7 +35,7 @@ if [ $? -ne 0 ]
 then
 echo "NGINX is going to install" &>>$LOG_FILE
 dnf install nginx -y
-VALIDATE $? nginx
+VALIDATE $? "nginx"
 else
 echo -e "$Y Nginx isalready installed $N" &>>$LOG_FILE
 fi
