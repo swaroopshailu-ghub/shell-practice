@@ -20,6 +20,18 @@ else
 echo -e "$G You are with root access $N" | tee -a $LOG_FILE
 fi
 
+
+VALIDATE()
+{
+    if [ $1 -eq 0 ]
+    then
+    echo -e "$2 is $G successfully installed $N" | tee -a $LOG_FILE
+    else
+    echo -e "$R FAILURE: $2 is failed $N" | tee -a $LOG_FILE
+    exit 1
+    fi
+}
+
 dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
@@ -39,14 +51,3 @@ VALIDATE $? "nginx"
 else
 echo -e "$Y Nginx isalready installed" | tee -a $LOG_FILE
 fi
-
-VALIDATE()
-{
-    if [ $1 -eq 0 ]
-    then
-    echo -e "$2 is $G successfully installed $N" | tee -a $LOG_FILE
-    else
-    echo -e "$R FAILURE: $2 is failed $N" | tee -a $LOG_FILE
-    exit 1
-    fi
-}
