@@ -25,7 +25,7 @@ if [ $? -ne 0 ]
 then
 echo "MYSQL is going to install" &>>$LOG_FILE
 dnf install mysql -y
-VALIDATE $? "MySql"
+VALIDATE $? "mysql"
 else
 echo -e "$Y MYSQL is already installed $N" &>>$LOG_FILE
 fi
