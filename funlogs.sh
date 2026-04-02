@@ -40,14 +40,13 @@ else
 echo -e "$Y Nginx isalready installed" | tee -a $LOG_FILE
 fi
 
-
 VALIDATE()
 {
     if [ $1 -eq 0 ]
     then
-    echo -e "$G $2 is successfully Installed $N" | tee -a $LOG_FILE
+    echo -e "$2 is $G successfully installed $N" | tee -a $LOG_FILE
     else
-    echo -e "$R FAILURE: $2 is Failed. $N" | tee -a $LOG_FILE
+    echo -e "$R FAILURE: $2 is failed $N" | tee -a $LOG_FILE
     exit 1
     fi
 }
