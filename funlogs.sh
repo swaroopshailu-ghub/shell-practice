@@ -37,7 +37,7 @@ echo "NGINX is going to install" | tee -a $LOG_FILE
 dnf install nginx -y
 VALIDATE $? "nginx"
 else
-echo -e "$Y Nginx isalready installed | tee -a $LOG_FILE
+echo -e "$Y Nginx isalready installed" | tee -a $LOG_FILE
 fi
 
 
